@@ -1,9 +1,15 @@
 <?php
 namespace Drupal\moviedb\Form;
+/**
+ * @file
+ * This file contains form to make a seach bar
+ */
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-
+/**
+ * Class to make a form for seach
+ */
 class FilterByName extends FormBase {
 
   /**

@@ -1,6 +1,7 @@
 <?php
 namespace Drupal\moviedb\Plugin\Block;
 /**
+ * @file
  * This file is used for rednering actor and movie specific on own node pages
  * rathr then new page of movielist or actor list
  */
@@ -21,6 +22,9 @@ use Drupal\moviedb\Controller as Controller;
  *   admin_label = @Translation("List block"),
  *   category = @Translation("List World"),
  * )
+ */
+/**
+ * This class is for making blocks of various nodepages like actor and movie
  */
 class ListBlock extends BlockBase {
 

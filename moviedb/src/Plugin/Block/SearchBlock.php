@@ -1,6 +1,9 @@
 <?php
 namespace Drupal\moviedb\Plugin\Block;
-
+/**
+ * @file
+ * This file implements the search bar as a block for the site
+ */
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormInterface;
 
@@ -12,6 +15,9 @@ use Drupal\Core\Form\FormInterface;
  *   admin_label = @Translation("Search block"),
  *   category = @Translation("Search World"),
  * )
+ */
+/**
+ * Class is used to redner the search as a block
  */
 class SearchBlock extends BlockBase {
 

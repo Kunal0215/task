@@ -1,6 +1,10 @@
 <?php
 namespace Drupal\moviedb\Controller;
-
+/**
+ * @file
+ * This file contains basic functionalities of task like as of movie list,
+ * actorlist, search function and popups
+ */
 use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
