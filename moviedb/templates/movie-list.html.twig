@@ -1,0 +1,33 @@
+  <table class="table table table-hover table-bordered table-striped table-responsive">
+  <thead>
+    <tr class="warning">
+      <th scope="col">Movie Name</th>
+      <th scope="col">Movie Poster</th>
+      <th scope="col">Description</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Cast</th>
+      <th scope="col">Ratings</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+      <tr>
+        <td><a href={{ item.url_movie }}>{{ item.name }}</td>
+        <td class="imgs"><img src={{ item.url }} class="img-thumbnail"></td>
+
+        <td>{{ item.desc|render|striptags }}</td>
+        <td>{{ item.date }}</td>
+        <td class="cast">
+        {% for x in item.cast %}
+          <a href={{ x.url }}>{{ x.name }}</a><br><br>
+         {% endfor %}
+        </td>
+        <td class = "star">
+          {% for star in range(1,item.rating) %}
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

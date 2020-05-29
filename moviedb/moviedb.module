@@ -1,0 +1,33 @@
+<?php
+
+function moviedb_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'moviedb/moviedb_js';
+}
+/**
+   * Implemetation of hooks in drupal.
+   * This function return a renderable array for different themes(Pages).
+   * @param  $existing, $type, $theme, $path
+   * @return mixed
+*/
+function moviedb_theme($existing, $type, $theme, $path) {
+  return array(
+    'movie_list' => array(
+      'variables' => array('items' => array(), 'title' => '')
+    ),
+    'actor_list' => array(
+      'variables' => array('items' => array(), 'title' => '')
+    ),
+    'actor_movielist' => array(
+      'variables' => array('items' => array(), 'actordata' => array(), 'title' => '')
+    ),
+    'moviedetails' => array(
+      'variables' => array('items' => array(), 'title' => '')
+    ),
+    'filterbyname' => array(
+      'render element' => 'form',
+    ),
+    'search' => array(
+      'variables' => array('items' => array(), 'title' => '')
+    ),
+  );
+}

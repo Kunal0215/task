@@ -1,0 +1,6 @@
+name: Movie Database task
+type: module
+description: 'Module for actor and movie Database management and organise them'
+package: Custom
+version: 8.x
+core: 8.x

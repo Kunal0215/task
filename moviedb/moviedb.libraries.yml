@@ -1,0 +1,7 @@
+moviedb_js:
+  version: 2.0
+  js:
+    js/ajax.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal.dialog.ajax

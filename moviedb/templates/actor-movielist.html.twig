@@ -1,0 +1,57 @@
+{% for actor in actordata %}
+  <img src={{ actor.actorimage }} class="img-thumbnail"><br><br>
+  <h1 class="mark">List of movies by {{ actor.actorname }}</h1><br>
+{% endfor %}
+<table class="table table-hover table-bordered table-striped table-responsive">
+  <thead>
+    <tr class="warning">
+      <th scope="col">Movie Name</th>
+      <th scope="col">Movie Poster</th>
+      <th scope="col">Movie Description</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Role of actor</th>
+      <th scope="col">Co-Stars</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+      <tr>
+        <td><a href="/node/{{ item.movie_id }}">{{ item.moviename }}</td>
+        <td class="imgs"><img src={{ item.image }} class="img-thumbnail"></td>
+        <td>{{ item.desc|render|striptags }}</td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.role }}</td>
+        <td class="cast">
+        {% for x in item.cast %}
+          <a href="#" class="costar-link"  data-toggle="modal" data-target="#myModal" movie-nid={{ item.movie_id }} nid={{ x.id }}>{{ x.name }}</a><br><br>
+        {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+<!-- Modal content-->
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <img class="mx-auto" width=150px><hr>
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>

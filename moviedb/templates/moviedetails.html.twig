@@ -1,0 +1,25 @@
+{% for item in items %}
+  <img class = "img-thumbnail" src={{ item.image_url }}>
+  <br>
+  <br>
+  {{ item.desc|render }}
+  <br>
+  <br>
+  <h5 class = "mark">{{ item.date }}</h5>
+  <br>
+  <mark>
+  <td class = "star">
+  {% for star in range(1,item.rating) %}
+  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+  {% endfor %}
+  </td></mark>
+  <br>
+  <br>
+  <code>
+  {% for x in item.cast %}
+    <a href={{ x.url }}>{{ x.name }}</a> -->  {{ x.role }}<br>
+  {% endfor %}
+  </code>
+  <br>
+  <br>
+{% endfor %}

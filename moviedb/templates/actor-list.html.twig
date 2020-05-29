@@ -1,0 +1,22 @@
+<table class="table table table-hover table-bordered table-striped table-responsive">
+  <thead>
+    <tr class="warning">
+      <th scope="col">Actor Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Last Movie</th>
+       <th scope="col">Last Movie Release Date</th>
+       <th scope="col">Last Movie Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+      <tr>
+        <td><a href={{ item.actor_url }}>{{ item.name }}</td>
+        <td class="imgs"><img src={{ item.image }} class="img-thumbnail"></td>
+        <td><a href={{ item.movie_url }}>{{ item.recent_movie }}</td>
+        <td>{{ item.recent_movie_date }}</td>
+        <td>{{ item.recent_movie_rating }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

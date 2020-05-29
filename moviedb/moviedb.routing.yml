@@ -1,0 +1,39 @@
+moviedb_movie:
+  path: '/moviedb/movielist'
+  defaults:
+    _controller: '\Drupal\moviedb\Controller\PhpController::movie_list'
+    _title: 'Movie Database'
+  requirements:
+    _permission: 'access content'
+
+moviedb_actor:
+  path: '/moviedb/actorlist'
+  defaults:
+    _controller: '\Drupal\moviedb\Controller\PhpController::actor_list'
+    _title: 'Actor Database'
+  requirements:
+    _permission: 'access content'
+
+moviedb_costar:
+  path: '/moviedb/costar/{movie}/{nid}'
+  defaults:
+    _controller: '\Drupal\moviedb\Controller\PhpController::costar'
+    _title: 'Co stars of the actor '
+  requirements:
+    _permission: 'access content'
+
+moviedb_formmovie:
+  path: '/moviedb/search'
+  defaults:
+    _controller: '\Drupal\moviedb\Controller\PhpController::form_movie'
+    _title: 'Movie Database'
+  requirements:
+    _permission: 'access content'
+
+moviedb_form:
+  path: '/filter'
+  defaults:
+    _form: '\Drupal\moviedb\Form\FilterByName'
+    _title: 'Movies list'
+  requirements:
+    _permission: 'access content'

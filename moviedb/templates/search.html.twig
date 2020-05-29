@@ -1,0 +1,28 @@
+  <table class="table table table-hover table-bordered table-responsive">
+  <thead>
+    <tr class="warning">
+      <th scope="col">Name</th>
+      <th scope="col">Image / Poster</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+      {% if item.type == 'Actor' %}
+      <tr class = 'bg-success'>
+      {% endif %}
+      {% if item.type == 'Movie' %}
+      <tr class = 'bg-danger'>
+      {% endif %}
+        <td ><a href={{ item.url }}>{{ item.name }}</td>
+        <td class = "imgs">
+          <img height = '100px' width = '100px' src={{ item.image }} class = "img-thumbnail">
+        </td>
+        <td class = 'small'>{{ item.desc|render|striptags|length > 100 ? item.desc|striptags|slice(0, 100) ~ '...' : item.desc|striptags }}</td>
+        <td>{{ item.type }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
